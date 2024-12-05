@@ -33,6 +33,8 @@ WORKDIR /home/kashiwade
 # powerlevel10kのインストール
 RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 RUN echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+COPY .p10k.zsh /home/kashiwade/.p10k.zsh
+COPY .zshrc /home/kashiwade/.zshrc
 
 # uv
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
